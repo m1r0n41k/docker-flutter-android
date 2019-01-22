@@ -11,13 +11,13 @@ ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 ENV LANGUAGE en_US:en
 
-RUN $ANDROID_HOME/tools/bin/sdkmanager --install "build-tools;28.0.3"
-RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
-
 ENV FLUTTER_HOME ${HOME}/sdks/flutter
 RUN git clone --branch master https://github.com/flutter/flutter.git ${FLUTTER_HOME}
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
+
+RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --install "build-tools;28.0.3"
+RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
 
 # doctor
 RUN flutter doctor
