@@ -12,7 +12,7 @@ ENV LC_ALL en_US.UTF-8
 ENV LANGUAGE en_US:en
 
 ENV FLUTTER_HOME ${HOME}/sdks/flutter
-RUN git clone --branch master https://github.com/flutter/flutter.git ${FLUTTER_HOME}
+RUN git clone --branch stable https://github.com/flutter/flutter.git ${FLUTTER_HOME}
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
 
